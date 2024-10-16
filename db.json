@@ -1,6 +1,6 @@
 {
     "contacts": [
       { "id": "1", "name": "Shahrukh Khan", "email": "shahrukh.khan@gmail.com" },
-      { "id": "2", "title": "Virat Kohli", "email": "virat.kohli@gmail.com" }
+      { "id": "2", "name": "Virat Kohli", "email": "virat.kohli@gmail.com" }
     ]
   }
