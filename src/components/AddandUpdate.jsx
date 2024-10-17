@@ -2,14 +2,16 @@ import React from "react";
 import { Field, Form, Formik } from "formik";
 import Modal from "./Modal";
 import axios from "axios";
+import { toast } from "react-toastify";
 
 const AddandUpdate = ({ isOpen, onClose, isUpdate, contact }) => {
   const addContact = async (contact) => {
     try {
       await axios.post("http://localhost:4000/contacts", contact);
-      location.reload();
+      toast.success("Contact Added Successfully");
     } catch (err) {
       console.log(err);
+      toast.success("Contact wasn't added");
     }
   };
 
@@ -17,9 +19,10 @@ const AddandUpdate = ({ isOpen, onClose, isUpdate, contact }) => {
     console.log("Contact", contact);
     try {
       await axios.put(`http://localhost:4000/contacts/${id}`, contact);
-      location.reload();
+      toast.success("Contact Updated Successfully");
     } catch (error) {
       console.log(error);
+      toast.success("Failed to update contact");
     }
   };
   return (
@@ -39,6 +42,7 @@ const AddandUpdate = ({ isOpen, onClose, isUpdate, contact }) => {
               console.log(values);
               addContact(values);
             }
+            onClose();
           }}
         >
           <Form className="flex flex-col gap-4">

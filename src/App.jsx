@@ -5,6 +5,8 @@ import { AiFillPlusCircle } from "react-icons/ai";
 import ContactsList from "./components/ContactsList";
 import AddandUpdate from "./components/AddandUpdate";
 import useDisclose from "./hooks/useDisclose";
+import { ToastContainer, toast } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
 
 const App = () => {
   const { onOpen, onClose, isOpen } = useDisclose();
@@ -28,6 +30,7 @@ const App = () => {
         <ContactsList />
       </div>
       <AddandUpdate isOpen={isOpen} onClose={onClose} />
+      <ToastContainer position="bottom-center" />
     </>
   );
 };

@@ -6,14 +6,9 @@
       "email": "shahrukh.khan@gmail.com"
     },
     {
-      "id": "2",
       "name": "Virat Kohli",
-      "email": "virat.kohli@gmail.com"
-    },
-    {
-      "id": "193d",
-      "name": "Ratan Tata",
-      "email": "ratan.tata@gmail.com"
+      "email": "virat.kohli@gmail.com",
+      "id": "2"
     }
   ]
 }

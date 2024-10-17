@@ -5,15 +5,17 @@ import { IoTrash } from "react-icons/io5";
 import { LiaEdit } from "react-icons/lia";
 import useDisclose from "../hooks/useDisclose";
 import AddandUpdate from "./AddandUpdate";
+import { toast } from "react-toastify";
 
 const ContactDetails = (contact) => {
   const { onOpen, onClose, isOpen } = useDisclose();
   const onDelete = async (id) => {
     try {
       await axios.delete(`http://localhost:4000/contacts/${id}`);
-      location.reload();
+      toast.success("Contact Deleted Successfully");
     } catch (error) {
       console.log(error);
+      toast.error("Contact doesn't exist");
     }
   };
   return (
